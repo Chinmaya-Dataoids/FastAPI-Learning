@@ -1,6 +1,6 @@
 # FastAPI Learning Journal
 
-
+### PLaylist like - https://www.youtube.com/playlist?list=PL-osiE80TeTsak-c-QsVeg0YYG_0TeyXI
 ## 📅 Day 1 - 2026-04-10
 
 ### Topics Covered
@@ -25,7 +25,13 @@
   - /redoc - routes to another SWAGGER UI that also provide documentation based on our code just in a different way
   - Using Jinja Templating we can render HTML content and can pass variable values that can be used in HTML file
 
-
+## 📅 Day 2 - 2026-04-13
+### Topics Covered
+- **Path parameters**
+  - in decorator we can define variable in url that can be accessed in python 
+  - HTTPException is used to return HTTP error responses
+  - status - gives constants for error. Make code for readable
+  - we might work with return JSON response , make sure to include status_code parameter else it will show success
 ---
 
 ### 🛠️ What I Built / Practiced
