@@ -32,13 +32,30 @@
   - HTTPException is used to return HTTP error responses
   - status - gives constants for error. Make code for readable
   - we might work with return JSON response , make sure to include status_code parameter else it will show success
-
+- **Pydantic Schemas**
+ - Explnantion covered below 
 
 ## 📅 Day 3 - 2026-04-14
 ### Topics Covered
-- **Request and reponse validation using pydantic**
+- **Adding database**
+- **Annotation, Type Hinting**
+- **UV as package manager**
+
+
+## 📅 Day 4 - 2026-04-15
+### Topics Covered
+- **OOPS in python**
   - in decorator we can define variable in url that can be accessed in python 
   - Depends - is for dependecies injection , its hoe we inject database session into the routes
+
+  ## 📅 Day 5 - 2026-04-16
+### Topics Covered
+- **Pydantic Tutorial**
+- **CRUD operations**
+- **Async Operations**
+ - Need to install/have a driver of database server that allows it to actually perform async operations
+ - In sync
+
 ---
 
 ---
@@ -59,8 +76,12 @@
   - An HTTP request can also include query parameters, which are appended to the URL and provide additional filtering or configuration for the request. These appear after a question mark in the URL, such as /api/posts?author=Chinmaya&limit=10, and are commonly used with GET requests but can be used with others as well. In FastAPI, query parameters are automatically mapped to function arguments based on their names and types, making them easy to work with.
 
   - Finally, the request may contain a body, which is where the main data is sent, especially in POST, PUT, or PATCH requests. The body can take several formats, with JSON being the most common in modern APIs. In your FastAPI example, the JSON body is parsed and validated against a Pydantic model (PostCreate), ensuring that all required fields are present and meet defined constraints before your function is executed. Other body formats include form data, multipart data for file uploads, and even raw text or XML, depending on the use case. Together, these components—request line, headers, query parameters, and body—form the complete structure of an HTTP request, and frameworks like FastAPI map each of these parts cleanly into your application logic using decorators, type hints, and data models.
+
+  - In SQLAlchemy ORM models, you don’t need to define an __init__() method or call super().__init__() because the framework automatically provides a constructor for you through its declarative system. When you create a model by inheriting from DeclarativeBase, SQLAlchemy intercepts the class definition and generates an __init__() method that accepts keyword arguments and assigns them to the corresponding attributes. This works seamlessly with model fields defined using Column, which are not just simple variables but special descriptors that handle data mapping and change tracking for database operations. As a result, you can directly create objects like Post(title="Hello") without worrying about initialization logic. If you choose to override __init__(), you must be careful to preserve SQLAlchemy’s internal behavior, but in most cases, the auto-generated constructor is sufficient and preferred.
 ---
 
 ### ❓ Doubts / Questions
-- (Things you didn’t understand or want to revisit)
-
+- How does annotation work and what is it , whats its need
+- Relationship back_populate attribute 
+- When we execute a query from command line , does that create a session? 
+- Why dont we require a __init__ method in pydantic model 
